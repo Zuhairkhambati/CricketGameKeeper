@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Score</title>
+    <link rel="stylesheet" href="cricket1.css">
+</head>
+<body>
+    <div class="main">
+        <div class="box">
+            <!-- Display Current Batting Team and Team Names -->
+            <h1 class="heading">Match In Progress</h1>
+            <h2 id="batting-team-display" class="heading"></h2>
+
+            <!-- Balls Container -->
+            <div class="balls-container" id="balls-container"></div>
+
+            <!-- Run and Action Buttons -->
+            <div class="buttons-container">
+                <button id="button-1" onclick="addBall('1')">1</button>
+                <button id="button-2" onclick="addBall('2')">2</button>
+                <button id="button-3" onclick="addBall('3')">3</button>
+                <button id="button-4" onclick="addBall('4')">4</button>
+                <button id="button-5" onclick="addBall('5')">5</button>
+                <button id="button-6" onclick="addBall('6')">6</button><br /><br />
+                <button id="button-dot" onclick="addBall('dot')">Dot Ball</button>
+                <button id="button-wicket" onclick="addBall('wicket')">Wicket</button>
+                <button id="button-wide" onclick="addExtraBall('wide')">Wide Ball</button>
+                <button id="button-no" onclick="addExtraBall('no')">No Ball</button>
+            </div>
+
+            <!-- New Buttons for Selecting Batsman, Bowler, and Viewing Stats -->
+            <div class="buttons-container">
+                <button id="select-batsman-button" onclick="openBatsmanModal()">Select Batsman</button>
+                <button id="select-bowler-button" onclick="openBowlerModal()">Select Bowler</button>
+                <button id="stats-button" onclick="openStatsModal()">Stats</button>
+            </div>
+
+            <!-- Score Displays -->
+            <div id="score-display" class="score-display"></div>
+            <div id="cumulative-score" class="cumulative-score"></div>
+            <div id="current-score"></div>
+        </div>
+    </div>
+
+    <!-- Modal for Selecting Batsman -->
+    <div id="batsman-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeBatsmanModal()">&times;</span>
+            <h2>Select Batsman</h2>
+            <div id="batsman-list"></div>
+        </div>
+    </div>
+
+    <!-- Modal for Selecting Bowler -->
+    <div id="bowler-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeBowlerModal()">&times;</span>
+            <h2>Select Bowler</h2>
+            <div id="bowler-list"></div>
+        </div>
+    </div>
+
+    <!-- Modal for Stats -->
+    <div id="stats-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeStatsModal()">&times;</span>
+            <h2>Match Stats</h2>
+            <div id="stats-content"></div>
+        </div>
+    </div>
+
+    <!-- JavaScript to Manage Scoring and New Features -->
+    <script src="cricket1.js"></script>
+</body>
+</html>
